@@ -1,0 +1,28 @@
+{
+  parserClass = "org.opencypher.graphddl.plugin.parser.GraphDdlParser"
+  extends     = "com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix     = "GraphDdl"
+  psiImplClassSuffix = "Impl"
+
+  psiPackage             = "org.opencypher.graphddl.plugin.parser.psi"
+  psiImplPackage         = "org.opencypher.graphddl.plugin.parser.psi.impl"
+  elementTypeHolderClass = "org.opencypher.graphddl.plugin.parser.psi.GraphDdlTypes"
+  elementTypeClass       = "org.opencypher.graphddl.plugin.GraphDdlParsing.ElementType"
+  tokenTypeClass         = "org.opencypher.graphddl.plugin.GraphDdlParsing.TokenType"
+  psiImplUtilClass       = "org.opencypher.graphddl.plugin.parser.psi.impl.GraphDdlPsiMethods"
+}
+
+simpleFile ::= (keyword|type|T_IDENTIFIER|T_SPECIAL|T_LINE_COMMENT)*
+
+keyword ::= (T_KEYWORD) {
+    pin=3
+    mixin="org.opencypher.graphddl.plugin.parser.psi.impl.GraphDdlElementImpl"
+    implements="org.opencypher.graphddl.plugin.GraphDdlParsing.Element"
+}
+
+type ::= (T_TYPE) {
+    pin=3
+    mixin="org.opencypher.graphddl.plugin.parser.psi.impl.GraphDdlElementImpl"
+    implements="org.opencypher.graphddl.plugin.GraphDdlParsing.Element"
+}

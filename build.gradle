@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij'   version '0.3.12'
+    id 'org.jetbrains.grammarkit' version '2018.2.1'
+}
+
+group 'org.opencypher'
+version '0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+intellij {
+    version '2018.2.4'
+}
+
+
+import org.jetbrains.grammarkit.tasks.*
+
+sourceSets.main.java.srcDirs += "src/main/gen"
+
+def genDir     = "src/main/gen"
+def javaDir    = "src/main/java"
+def packageDir = "org/opencypher/graphddl/plugin"
+
+task generateLexer(type: GenerateLexer) {
+    source        = "$javaDir/$packageDir/lexer/GraphDdl.flex"
+    targetDir     = "$genDir/$packageDir/lexer"
+    targetClass   = "GraphDdlLexer"
+    purgeOldFiles = true
+}
+
+task generateParser(type: GenerateParser) {
+    source        = "$javaDir/$packageDir/parser/GraphDdl.bnf"
+    targetRoot    = genDir
+    pathToParser  = "$packageDir/parser/GraphDdlParser.java"
+    pathToPsiRoot = "$packageDir/parser/psi"
+    purgeOldFiles = true
+}
+
+task generate {
+    dependsOn generateLexer, generateParser
+}
+
+compileJava     .dependsOn generate
+compileTestJava .dependsOn generate

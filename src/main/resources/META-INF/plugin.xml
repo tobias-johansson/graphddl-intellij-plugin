@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>org.opencypher.graphddl.intellij.plugin</id>
+    <name>GraphDdl Language Support</name>
+    <version>0.1</version>
+
+    <description><![CDATA[
+      Rudimentary syntax highlighting for Graph Ddl
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Initial version
+    ]]></change-notes>
+
+    <extensions
+            defaultExtensionNs="com.intellij">
+        <fileTypeFactory
+                implementation="org.opencypher.graphddl.plugin.GraphDdlFileType$Factory"/>
+        <lang.parserDefinition
+                language="GRAPHDDL"
+                implementationClass="org.opencypher.graphddl.plugin.GraphDdlParsing$ParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="GRAPHDDL"
+                implementationClass="org.opencypher.graphddl.plugin.GraphDdlSyntaxHighlighter$Factory"/>
+    </extensions>
+</idea-plugin>
