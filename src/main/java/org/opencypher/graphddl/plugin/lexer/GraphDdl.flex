@@ -21,30 +21,37 @@ import static org.opencypher.graphddl.plugin.parser.psi.GraphDdlTypes.*;
 %unicode
 
 EOL=\R
+
 WHITE_SPACE=\s+
-SPECIAL = (";"|","|"("|")"|"{"|"}"|"["|"]"|"$"|":"|"."|"="|"?"|"-"|">")
-KEYWORD = (
-    "AND" |
-    "CATALOG" |
-    "CREATE" |
-    "END" |
-    "FROM" |
-    "GRAPH" |
-    "JOIN" |
-    "LABEL" |
-    "NODE" |
-    "NODES" |
-    "ON" |
-    "RELATIONSHIP" |
-    "SCHEMA" |
-    "SET" |
-    "SETS" |
-    "START" |
-    "WITH")
+
+SPECIAL = ";"|","|"("|")"|"{"|"}"|"["|"]"|"$"|":"|"."|"="|"?"|"-"|">"
+
+KEYWORD =
+  "CATALOG"      | "catalog"      |
+  "CREATE"       | "create"       |
+  "LABEL"        | "label"        |
+  "GRAPH"        | "graph"        |
+  "KEY"          | "key"          |
+  "WITH"         | "with"         |
+  "FROM"         | "from"         |
+  "NODE"         | "node"         |
+  "NODES"        | "nodes"        |
+  "RELATIONSHIP" | "relationship" |
+  "SET"          | "set"          |
+  "SETS"         | "sets"         |
+  "JOIN"         | "join"         |
+  "ON"           | "on"           |
+  "AND"          | "and"          |
+  "AS"           | "as"           |
+  "SCHEMA"       | "schema"       |
+  "START"        | "start"        |
+  "END"          | "end"
 
 TYPE =
-    "INTEGER" |
-    "STRING"
+  "STRING"  | "string"  |
+  "INTEGER" | "integer" |
+  "FLOAT"   | "float"   |
+  "BOOLEAN" | "boolean"
 
 LINE_COMMENT = "--" [^\r\n]*
 
