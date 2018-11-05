@@ -2,6 +2,7 @@ package org.opencypher.graphddl.plugin;
 
 
 import com.intellij.codeInsight.completion.*;
+import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.PsiElement;
@@ -47,13 +48,19 @@ public class GraphDdlCompletions extends CompletionContributor {
                                            ProcessingContext context,
                                            @NotNull CompletionResultSet resultSet) {
                     for (String keyword : KEYWORDS) {
-                        resultSet.addElement(LookupElementBuilder.create(keyword));
+                        resultSet.addElement(kwLookup(keyword));
                     }
                     for (String type : TYPES) {
-                        resultSet.addElement(LookupElementBuilder.create(type));
+                        resultSet.addElement(kwLookup(type));
                     }
                 }
             }
         );
+    }
+
+    private static LookupElement kwLookup(String kw) {
+        return LookupElementBuilder
+                .create(kw)
+                .withLookupString(kw.toLowerCase());
     }
 }
