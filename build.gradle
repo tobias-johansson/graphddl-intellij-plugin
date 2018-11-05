@@ -4,8 +4,9 @@ plugins {
     id 'org.jetbrains.grammarkit' version '2018.2.1'
 }
 
+def ver = '0.1'
 group 'org.opencypher'
-version '0.1-SNAPSHOT'
+version ver + (property('release').toBoolean() ? '' : '-SNAPSHOT')
 
 sourceCompatibility = 1.8
 
