@@ -21,5 +21,8 @@
         <lang.syntaxHighlighterFactory
                 language="GRAPHDDL"
                 implementationClass="org.opencypher.graphddl.plugin.GraphDdlSyntaxHighlighter$Factory"/>
+        <completion.contributor
+                language="GRAPHDDL"
+                implementationClass="org.opencypher.graphddl.plugin.GraphDdlCompletions"/>
     </extensions>
 </idea-plugin>
