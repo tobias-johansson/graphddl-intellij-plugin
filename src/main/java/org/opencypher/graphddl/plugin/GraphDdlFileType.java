@@ -1,5 +1,6 @@
 package org.opencypher.graphddl.plugin;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;
 import com.intellij.openapi.fileTypes.LanguageFileType;
@@ -34,9 +35,7 @@ public class GraphDdlFileType extends LanguageFileType {
   }
 
   @Override @Nullable
-  public Icon getIcon() {
-    return Icons.FILE;
-  }
+  public Icon getIcon() { return Icons.FILE; }
 
   public static class Factory extends FileTypeFactory {
     @Override
@@ -46,7 +45,7 @@ public class GraphDdlFileType extends LanguageFileType {
   }
 
   public static class Icons {
-    public static final Icon FILE = IconLoader.getIcon("/icons/jar-gray.png");
+    public static final Icon FILE = AllIcons.FileTypes.Custom;
   }
 
   public static class Language extends com.intellij.lang.Language {
