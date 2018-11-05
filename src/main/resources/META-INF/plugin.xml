@@ -24,5 +24,8 @@
         <completion.contributor
                 language="GRAPHDDL"
                 implementationClass="org.opencypher.graphddl.plugin.GraphDdlCompletions"/>
+        <lang.commenter
+                language="GRAPHDDL"
+                implementationClass="org.opencypher.graphddl.plugin.GraphDdlCommenter"/>
     </extensions>
 </idea-plugin>
