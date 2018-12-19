@@ -11,25 +11,22 @@ import org.jetbrains.annotations.NotNull;
 
 public class GraphDdlCompletions extends CompletionContributor {
     private final String[] KEYWORDS = new String[] {
-            "CATALOG",
             "CREATE",
-            "LABEL",
-            "GRAPH",
+            "ELEMENT",
             "KEY",
-            "WITH",
+            "GRAPH",
+            "TYPE",
+            "OF",
+            "AS",
             "FROM",
-            "NODE",
+            "START",
+            "END",
             "NODES",
-            "RELATIONSHIP",
-            "SET",
-            "SETS",
             "JOIN",
             "ON",
             "AND",
-            "AS",
-            "SCHEMA",
-            "START",
-            "END"
+            "SET",
+            "SCHEMA"
     };
 
     private final String[] TYPES = new String[] {

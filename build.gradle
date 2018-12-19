@@ -4,7 +4,7 @@ plugins {
     id 'org.jetbrains.grammarkit' version '2018.2.1'
 }
 
-def ver = '0.1'
+def ver = '0.2'
 group 'org.opencypher'
 version ver + (property('release').toBoolean() ? '' : '-SNAPSHOT')
 
@@ -20,6 +20,7 @@ dependencies {
 
 intellij {
     version '2018.2.4'
+    updateSinceUntilBuild = false
 }
 
 

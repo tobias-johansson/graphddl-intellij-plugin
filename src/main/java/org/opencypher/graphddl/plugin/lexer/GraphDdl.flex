@@ -25,32 +25,28 @@ EOL=\R
 WHITE_SPACE=\s+
 
 SPECIAL =
-    "("|")"|"|"|","|
-    "["|"]"|"-"|
-    "{"|"}"|":"|"?"|
-    "<"|">"|"*"|
-    "."|"="|";"
+    "(" | ")" | "," | "?" |
+    "[" | "]" |
+    "<" | ">" | "-" |
+    "." | "=" | ";"
 
 KEYWORD =
-  "CATALOG"      | "catalog"      |
-  "CREATE"       | "create"       |
-  "LABEL"        | "label"        |
-  "GRAPH"        | "graph"        |
-  "KEY"          | "key"          |
-  "WITH"         | "with"         |
-  "FROM"         | "from"         |
-  "NODE"         | "node"         |
-  "NODES"        | "nodes"        |
-  "RELATIONSHIP" | "relationship" |
-  "SET"          | "set"          |
-  "SETS"         | "sets"         |
-  "JOIN"         | "join"         |
-  "ON"           | "on"           |
-  "AND"          | "and"          |
-  "AS"           | "as"           |
-  "SCHEMA"       | "schema"       |
-  "START"        | "start"        |
-  "END"          | "end"
+  "CREATE"  | "create"  |
+  "ELEMENT" | "element" |
+  "KEY"     | "key"     |
+  "GRAPH"   | "graph"   |
+  "TYPE"    | "type"    |
+  "OF"      | "of"      |
+  "AS"      | "as"      |
+  "FROM"    | "from"    |
+  "START"   | "start"   |
+  "END"     | "end"     |
+  "NODES"   | "nodes"   |
+  "JOIN"    | "join"    |
+  "ON"      | "on"      |
+  "AND"     | "and"     |
+  "SET"     | "set"     |
+  "SCHEMA"  | "schema"
 
 TYPE =
   "STRING"  | "string"  |

@@ -8,8 +8,13 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    ## 0.2
+      Update for new syntax in CAPS 0.2.3
+    ## 0.1
       Initial version
     ]]></change-notes>
+
+    <idea-version since-build="173.0" />
 
     <extensions
             defaultExtensionNs="com.intellij">
