@@ -46,7 +46,8 @@ KEYWORD =
   "ON"      | "on"      |
   "AND"     | "and"     |
   "SET"     | "set"     |
-  "SCHEMA"  | "schema"
+  "SCHEMA"  | "schema"  |
+  "EXTENDS" | "extends"
 
 TYPE =
   "STRING"  | "string"  |
