@@ -14,6 +14,8 @@
       Initial version
     ]]></change-notes>
 
+    <vendor url="https://github.com/tobias-johansson" />
+
     <idea-version since-build="173.0" />
 
     <extensions
